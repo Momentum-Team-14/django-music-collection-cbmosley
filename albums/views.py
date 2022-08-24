@@ -40,4 +40,5 @@ def albums_edit(request, pk):
 def delete_album(request, pk):
     album = get_object_or_404(Album, pk=pk)
     album.delete()
-    return render(request, 'albums/album_home.html', {"album": album})
+    return redirect('list_albums')
+    # return render(request, 'albums/album_home.html', {"album": album})
