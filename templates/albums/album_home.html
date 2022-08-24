@@ -4,11 +4,17 @@
     <header>
         <h1>Christopher's Album List</h1>
     </header>
-    <article>
+    <div class="container">
+    <article class="album-box">
         <h2> <a href="">Albums</a></h2>
         {% for album in albums %}
-        <p>{{ album }}</p>
+        <div class="album-box"></div>
+        <a class="album-title" href="{% url 'album_detail' pk=album.pk %}"> {{ album }} </a>
+        
         {% endfor %}
+    
     </article>
+    </div>
+
 
 {% endblock %}

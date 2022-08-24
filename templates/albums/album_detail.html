@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+    <h1>{{ album }}</h1>
+    <aside class="actions">
+        <a class="btn btn-secondary" href="{% url 'albums_edit' pk=album.pk %}">
+          {% include 'albums/icons/bootstrap/pencil-fill.svg' %}
+        </a>
+    </aside>
+    <aside class="actions">
+        <a class="delete-button" href="{% url 'delete_album' pk=album.pk %}">
+            {% include 'albums/icons/bootstrap/trash.svg' %}
+        </a>
+    </aside>
+{% endblock %} 
